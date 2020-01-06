@@ -1,0 +1,31 @@
+{
+  "name": "cursoES6",
+  "version": "1.0.0",
+  "description": "Curso da Rocketseat",
+  "main": "index.js",
+  "author": "Arthur",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --mode=development",
+    "desafio": "babel ./desafio/main.js -o ./desafio/bundle.js -w",
+    "dev2": "babel ./src/main.js -o ./src/bundle.js -w"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.7.4",
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/helper-remap-async-to-generator": "^7.7.4",
+    "@babel/plugin-transform-async-to-generator": "^7.7.4",
+    "axios": "^0.19.0"
+  }
+}

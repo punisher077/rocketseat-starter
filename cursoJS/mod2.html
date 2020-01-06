@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio do modulo 2</title>
+</head>
+
+<body>
+    <div id="app">
+        <button id="btn"> Clique </button>
+    </div>
+
+
+    <div id="q3">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+        <ul id="nomes">
+
+        </ul>
+    </div>
+    </div>
+    <script>
+
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var btnElement = document.querySelector("div#app button"); var appElement = document.querySelector("div#app");
+        btnElement.onclick = function () {
+            var boxElement = document.createElement("div");
+            boxElement.setAttribute("style", "width: 100px;height: 100px; background-color: #f00;");
+            // boxElement.style.width = 100;
+            // boxElement.style.height = 100;
+            // boxElement.style.backgroundColor = "#f00";
+            boxElement.onmouseover = function () {
+                boxElement.style.backgroundColor = getRandomColor();
+            };
+            appElement.appendChild(boxElement);
+        };
+
+
+        //Q3
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var ulElement = document.querySelector("div#q3 ul");
+
+        for (nome in nomes) {
+            var liElement = document.createElement("li");
+            var txtLi = document.createTextNode(nomes[nome]);
+            liElement.appendChild(txtLi);
+            ulElement.appendChild(liElement);
+        }
+
+        function adicionar(){
+            var inputElement = document.querySelector("div#q3 input");
+            var textInput = inputElement.value;
+            var liElement = document.createElement("li");
+            var txtLi = document.createTextNode(textInput);
+            liElement.appendChild(txtLi);
+            ulElement.appendChild(liElement);
+        }
+    </script>
+</body>
+
+</html>

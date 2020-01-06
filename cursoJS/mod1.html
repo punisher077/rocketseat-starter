@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        // Q1
+        function desestruturaObjeto(obj) {
+            return `O usuário mora em São Paulo ${obj.cidade} / ${obj.uf}, no bairro ${obj.bairro}, na rua "${obj.rua}" com n° ${obj.numero}`;
+        }
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+        var msg = desestruturaObjeto(endereco);
+        console.log(msg);
+
+        // Q2
+
+        function pares(x, y) {
+            while (x < y) {
+                if (x % 2 == 0) {
+                    //console.log(x + " é par");
+                }
+                x++;
+            }
+        }
+        pares(32, 321);
+
+
+        // Q3 
+
+        function temHabilidade(skills) {
+            return skills.indexOf("Javascript") >= 0;
+        }
+        var skills = ["Javascript", "ReactJS", "React Native"];
+        var res = temHabilidade(skills); // true ou false
+
+        console.log(res);
+
+        // Q4
+
+        function experiencia(anos) {
+            if (anos >= 0 && anos <= 1) {
+                return "Iniciante";
+            }
+            else if (anos > 1 && anos <= 3) {
+                return "Intermediário";
+            }
+            else if (anos > 3 && anos <= 6) {
+                return "Avançado";
+            }
+            else if (anos >= 7) {
+                return "Jedi Master";
+            }
+            else return "Invalido";
+        }
+        var anosEstudo = 7;
+        var xp = experiencia(anosEstudo);
+        console.log(xp);
+        // De 0-1 ano: Iniciante
+        // De 1-3 anos: Intermediário
+        // De 3-6 anos: Avançado
+        // De 7 acima: Jedi Master
+
+
+        //Q5
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+        // O Diego possui as habilidades: Javascript, ReactJS, Redux
+        //O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir
+
+        function describe(obj){
+            for (var usu of usuarios){
+                console.log(`O ${usu.nome} possui as habilidades: ${usu.habilidades.join(', ')}`);
+            }
+        }
+        describe(usuarios);
+    </script>
+</body>
+
+</html>
